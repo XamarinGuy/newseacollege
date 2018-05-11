@@ -1,7 +1,9 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace seacollegeproject
 {
@@ -16,8 +18,8 @@ namespace seacollegeproject
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+            AppCenter.Start("6ffcb7cc-6fa4-4394-9cf0-4650217d5771", typeof(Analytics), typeof(Crashes));
+        }
 
 		protected override void OnSleep ()
 		{
